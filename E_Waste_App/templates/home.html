@@ -58,7 +58,7 @@
                         <h3>{{ product.name }}</h3>
                         <h6>From {{ product.vendor.company_name }}</h6>
                         <p>Price: KSh {{ product.price }}</p>
-                        <p>{{ product.description }}. This product is swappable.</p>
+                        <p>{{ product.description }} <b>This product is swappable.</b></p>
                         <a href="{% url 'product_detail' product.id %}">View Details</a>
                     </div>
                 {% empty %}
