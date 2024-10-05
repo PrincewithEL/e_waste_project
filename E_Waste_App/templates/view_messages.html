@@ -48,7 +48,7 @@
                         {% if message.sender == request.user.client %}
                             <p><strong>You:</strong> {{ message.content }}</p>
                         {% else %}
-                            <p><strong>{{ message.sender.first_name }} {{ message.sender.last_name }}:</strong> {{ message.content }}</p>
+                            <p><strong>{{ message.sender.user.username }}:</strong> {{ message.content }}</p>
                         {% endif %}
                         <span class="message-timestamp">{{ message.timestamp|date:"F j, Y H:i A" }}</span>
                     </div>

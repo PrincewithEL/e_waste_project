@@ -56,7 +56,7 @@ def home(request):
     max_price = request.GET.get('max_price', '')  # Maximum price filter (optional)
 
     # Start with all products
-    products = Product.objects.exclude(status='Sold')
+    products = Product.objects.filter(status='Available')
     vendors = Vendor.objects.all()
 
     # Apply search query if present
@@ -309,7 +309,6 @@ def client_signup(request):
         if form.is_valid():
             user = form.save()  # This saves both User and Client
             login(request, user)  # Log the user in after signup
-            messages.success(request, 'Client account created successfully!')
             return redirect('client_dashboard')
     else:
         form = ClientRegistrationForm()
@@ -819,7 +818,7 @@ def client_dashboard(request):
     max_price = request.GET.get('max_price', '')  # Maximum price filter (optional)
 
     # Start with all products
-    products = Product.objects.exclude(status='Sold')
+    products = Product.objects.filter(status='Available')
     vendors = Vendor.objects.all()
 
     # Apply search query if present
