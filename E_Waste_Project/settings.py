@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-kc_3tbu)w-ji2(+oh%27&0mbt19x0cj4y*^ptwu1nbm(c4m&gq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://e-waste-project.onrender.com/', 'http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['e-waste-project.onrender.com', '127.0.0.1:8000', 'localhost']
 
 
 # Application definition
