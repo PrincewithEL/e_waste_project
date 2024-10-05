@@ -35,7 +35,7 @@
     <ul>
     {% for rating in ratings %}
         <li>
-            <strong>Client:</strong> {{ rating.client.username }}<br>
+            <strong>Client:</strong> {{ rating.client.user.username }}<br>
             <strong>Rating:</strong> {{ rating.score }}/10<br>
             <strong>Comment:</strong> {{ rating.comment|default:"No comment provided" }}<br>
             <strong>Date:</strong> {{ rating.created_at|date:"F j, Y, g:i a" }}<br>
