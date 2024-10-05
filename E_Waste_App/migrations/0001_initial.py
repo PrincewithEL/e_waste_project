@@ -14,6 +14,11 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.AlterField(
+            model_name='user',
+            name='last_login',
+            field=models.DateTimeField(null=True, blank=True),
+        ),
         migrations.CreateModel(
             name='Product',
             fields=[
