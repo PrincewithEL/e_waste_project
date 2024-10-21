@@ -2,74 +2,16 @@
 
 from django.db import migrations
 
-def create_dummy_data(apps, schema_editor):
-    # Get the models
-    User = apps.get_model('auth', 'User')
-    Vendor = apps.get_model('E_Waste_App', 'Vendor')
-    Product = apps.get_model('E_Waste_App', 'Product')
+# def remove_dummy_data(apps, schema_editor):
+#     # Get the models
+#     User = apps.get_model('auth', 'User')
+#     Vendor = apps.get_model('E_Waste_App', 'Vendor')
+#     Product = apps.get_model('E_Waste_App', 'Product')
 
-    # Create a dummy vendor user
-    vendor_user = User.objects.create_user(
-        username='John Doe',
-        email='john@ewaste.com',
-        password='12345John..'
-    )
-
-    # Create the vendor profile
-    vendor = Vendor.objects.create(
-        user=vendor_user,
-        company_name='Eco E-Waste Solutions',
-        address='Kimathi Street, Nairobi, Kenya',
-        contact_number='+254700000000'
-    )
-
-    # Create some dummy products related to e-waste with images
-    Product.objects.create(
-        name='Recycled Laptop Batteries',
-        description='A collection of refurbished and recycled laptop batteries for reuse.',
-        price=1500.00,
-        vendor=vendor,
-        image='product_images/laptop_battery.jpg',  # Reference to the image file
-        status='Available'
-    )
-
-    Product.objects.create(
-        name='Old Smartphone Recycling Kit',
-        description='A DIY kit to recycle old smartphones safely and sustainably.',
-        price=800.00,
-        vendor=vendor,
-        image='product_images/smartphone_kit.jpg',  # Reference to the image file
-        status='Available'
-    )
-
-    Product.objects.create(
-        name='E-Waste Recycling Bin',
-        description='A durable bin designed for safe e-waste disposal and collection.',
-        price=3000.00,
-        vendor=vendor,
-        image='product_images/recycling_bin.jpg',  # Reference to the image file
-        status='Available'
-    )
-
-    Product.objects.create(
-        name='Recycled Circuit Boards',
-        description='Refurbished circuit boards collected from discarded electronics.',
-        price=2000.00,
-        vendor=vendor,
-        image='product_images/circuit_boards.jpg',  # Reference to the image file
-        status='Available'
-    )
-
-def remove_dummy_data(apps, schema_editor):
-    # Get the models
-    User = apps.get_model('auth', 'User')
-    Vendor = apps.get_model('E_Waste_App', 'Vendor')
-    Product = apps.get_model('E_Waste_App', 'Product')
-
-    # Remove the dummy vendor and products
-    Product.objects.filter(vendor__user__username='John Doe').delete()
-    Vendor.objects.filter(user__username='John Doe').delete()
-    User.objects.filter(username='John Doe').delete()
+#     # Remove the dummy vendor and products
+#     Product.objects.filter(vendor__user__username='John Doe').delete()
+#     Vendor.objects.filter(user__username='John Doe').delete()
+#     User.objects.filter(username='John Doe').delete()
 
 class Migration(migrations.Migration):
 
@@ -78,6 +20,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(create_dummy_data, remove_dummy_data),
+
     ]
 

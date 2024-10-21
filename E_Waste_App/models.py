@@ -48,6 +48,8 @@ class Client(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    accident_description = models.TextField(null=True, blank=True)
+    is_working = models.BooleanField(default=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='product_images/', blank=True, null=True)
     vendor = models.ForeignKey('Vendor', on_delete=models.CASCADE)

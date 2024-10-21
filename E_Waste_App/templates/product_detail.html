@@ -34,6 +34,13 @@
         {% endif %}
         
         <p><strong>Description:</strong> {{ product.description }}.  This product is swappable.</p>
+                        <p><strong>Accident Description:</strong> {{ product.accident_description }}</p>
+<!--                         {% if product.is_working == 'TRUE' %}
+                        <p><strong>Is Working:</strong> <input type="checkbox" disabled checked></p>
+                        {% else %}
+                        <p><strong>Is Working:</strong> <input type="checkbox" disabled></p>
+                        {% endif %} -->
+                        <p><strong>Is Working:</strong> {{ product.is_working }}.</p>
         <p><strong>Price:</strong> KSh {{ product.price }}</p>
         <p><strong>Status:</strong> {{ product.status }}</p>
 

@@ -48,7 +48,7 @@ class ClientRegistrationForm(UserCreationForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'description', 'price', 'image']  # Adjust based on your Product model fields
+        fields = ['name', 'description', 'price', 'image', 'accident_description', 'is_working']  # Adjust based on your Product model fields
 
 # Message Form
 class MessageForm(forms.Form):

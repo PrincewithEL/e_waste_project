@@ -59,6 +59,13 @@
                         <h6>From {{ product.vendor.company_name }}</h6>
                         <p>Price: KSh {{ product.price }}</p>
                         <p>{{ product.description }} <b>This product is swappable.</b></p>
+                                                <p><strong>Accident Description:</strong> {{ product.accident_description }}</p>
+<!--                         {% if product.is_working == 'TRUE' %}
+                        <p><strong>Is Working:</strong> <input type="checkbox" disabled checked></p>
+                        {% else %}
+                        <p><strong>Is Working:</strong> <input type="checkbox" disabled></p>
+                        {% endif %} -->
+                        <p><strong>Is Working:</strong> {{ product.is_working }}.</p>
                         <a href="{% url 'product_detail' product.id %}">View Details</a>
                     </div>
                 {% empty %}
