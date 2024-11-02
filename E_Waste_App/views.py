@@ -56,7 +56,7 @@ def home(request):
     max_price = request.GET.get('max_price', '')  # Maximum price filter (optional)
 
     # Start with all products
-    products = Product.objects.filter(status='Available')
+    products = Product.objects.filter(status='Availble')
     vendors = Vendor.objects.all()
 
     # Apply search query if present
@@ -818,7 +818,7 @@ def client_dashboard(request):
     max_price = request.GET.get('max_price', '')  # Maximum price filter (optional)
 
     # Start with all products
-    products = Product.objects.filter(status='Available')
+    products = Product.objects.filter(status='Availble')
     vendors = Vendor.objects.all()
 
     # Apply search query if present
